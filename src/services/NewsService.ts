@@ -38,4 +38,17 @@ export default class NewsService {
 			console.log(e);
 		}
 	}
+
+	async getAllNotNotifiedEmail(): Promise<News[]> {
+		const newsRepository = await this.newsRepository;
+
+		const news = await newsRepository.find({ notifiedEmail: false });
+		const toUpdateNews = await newsRepository.save(
+			news.map((item) => ({ ...item, notifiedEmail: true })),
+			{ chunk: 10 },
+		);
+		await newsRepository.save(toUpdateNews);
+
+		return news;
+	}
 }

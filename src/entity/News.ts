@@ -16,4 +16,9 @@ export class News extends GenericEntity {
 
 	@Column()
 	published: Date;
+
+	@Column({
+		default: false,
+	})
+	notifiedEmail: boolean;
 }

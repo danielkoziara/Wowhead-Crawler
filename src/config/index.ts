@@ -4,6 +4,7 @@ const config = {
 	development: {
 		base_url: 'https://www.wowhead.com/',
 		noreply_email: 'test@danielkoziara.pl',
+		info_email: 'daniel@danielkoziara.pl',
 		mail: {
 			host: 'mail32.mydevil.net',
 			port: 465,
@@ -17,6 +18,7 @@ const config = {
 	production: {
 		base_url: 'https://www.wowhead.com/',
 		noreply_email: 'test@danielkoziara.pl',
+		info_email: 'daniel@danielkoziara.pl',
 		mail: {
 			host: 'mail32.mydevil.net',
 			port: 465,
