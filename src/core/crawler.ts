@@ -55,9 +55,10 @@ export default class Crawler implements ICrawler {
 		news.published = new Date(
 			$(element).find('.news-post-header-byline span.date-tip').attr('title').replace('at', ''),
 		);
-		news.poster = String($(element).find('.news-post-teaser-image').attr('style'))
-			.replace(/.*\(/g, '')
-			.replace(/\?.*/g, '');
+		news.poster =
+			String($(element).find('.news-post-teaser-image').attr('style'))
+				.replace(/.*\(/g, '')
+				.replace(/\?.*/g, '') || null;
 		return news;
 	}
 
