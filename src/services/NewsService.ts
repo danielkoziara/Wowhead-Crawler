@@ -19,7 +19,7 @@ export default class NewsService {
 
 			const isExsistNews = await newsRepository.findOne({ title: data.title, link: data.link });
 			if (isExsistNews) {
-				throw new Error(`News "${data.title}" exsist in database with ID: ${isExsistNews.id}`);
+				console.log(`News "${data.title}" exsist in database with ID: ${isExsistNews.id}`);
 			}
 
 			const news = new News();
@@ -30,7 +30,9 @@ export default class NewsService {
 			news.published = data.published;
 
 			const result = await newsRepository.save(news);
-
+			if (result) {
+				console.log(`Added news "${result.title}" with ID: ${result.id}`);
+			}
 			return result;
 		} catch (e) {
 			console.log(e);

@@ -1,8 +1,13 @@
-import { createConnection, Connection } from 'typeorm';
+import { createConnection, Connection, getConnectionManager } from 'typeorm';
 
 export default class DbService {
 	async connection(): Promise<Connection> {
-		const connection: Connection = await createConnection();
-		return connection;
+		try {
+			const connection: Connection = await createConnection();
+			return connection;
+		} catch (e) {
+			const existentConn = getConnectionManager().get('default');
+			return existentConn;
+		}
 	}
 }
