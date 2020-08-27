@@ -3,29 +3,29 @@ const environment = process.env.NODE_ENV === 'production' ? 'production' : 'deve
 const config = {
 	development: {
 		base_url: 'https://www.wowhead.com/',
-		noreply_email: 'test@danielkoziara.pl',
-		info_email: 'daniel@danielkoziara.pl',
+		noreply_email: '#',
+		info_email: '#',
 		mail: {
-			host: 'mail32.mydevil.net',
+			host: '#',
 			port: 465,
 			secure: true,
 			auth: {
-				user: 'test@danielkoziara.pl',
-				pass: 'XmYmYJNRDMTqz3Y7KTfk',
+				user: '#',
+				pass: '#',
 			},
 		},
 	},
 	production: {
 		base_url: 'https://www.wowhead.com/',
-		noreply_email: 'test@danielkoziara.pl',
-		info_email: 'daniel@danielkoziara.pl',
+		noreply_email: '#',
+		info_email: '#',
 		mail: {
-			host: 'mail32.mydevil.net',
+			host: '#',
 			port: 465,
 			secure: true,
 			auth: {
-				user: 'test@danielkoziara.pl',
-				pass: 'XmYmYJNRDMTqz3Y7KTfk',
+				user: '#',
+				pass: '#',
 			},
 		},
 	},
