@@ -11,5 +11,5 @@ import app from './core';
 
 // cron tasks
 cron.schedule('0 0 * * *', async () => {
-	await await app();
+	await app();
 });
